@@ -11,9 +11,16 @@ import (
 )
 
 func main() {
+	Day2()
+}
+
+// Day2 solves http://adventofcode.com/day/2
+func Day2() {
 	var presents = readPresents(inputFilePath())
+	
 	var area = 0
 	var length = 0
+	
 	for i := range presents {
 		// NOTE, that the dimensions are sorted in increasing order
 		var dimensions = presents[i]
@@ -26,8 +33,9 @@ func main() {
 		length += 2*dimensions[0] + 2*dimensions[1]
 		length += dimensions[0] * dimensions[1] * dimensions[2]
 	}
+	
 	log.Printf("The elves need %d sq feet of paper", area)
-	log.Printf("They also require %d feet of bow", length)
+	log.Printf("They also require %d feet of ribbon", length)
 }
 
 type present []int
