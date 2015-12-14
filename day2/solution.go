@@ -1,8 +1,7 @@
-package main
+package day2
 
 import (
 	"bufio"
-	"flag"
 	"log"
 	"os"
 	"sort"
@@ -10,17 +9,13 @@ import (
 	"strings"
 )
 
-func main() {
-	Day2()
-}
+// Solve solves http://adventofcode.com/day/2
+func Solve(inputFilePath string) {
+	var presents = readPresents(inputFilePath)
 
-// Day2 solves http://adventofcode.com/day/2
-func Day2() {
-	var presents = readPresents(inputFilePath())
-	
 	var area = 0
 	var length = 0
-	
+
 	for i := range presents {
 		// NOTE, that the dimensions are sorted in increasing order
 		var dimensions = presents[i]
@@ -33,7 +28,7 @@ func Day2() {
 		length += 2*dimensions[0] + 2*dimensions[1]
 		length += dimensions[0] * dimensions[1] * dimensions[2]
 	}
-	
+
 	log.Printf("The elves need %d sq feet of paper", area)
 	log.Printf("They also require %d feet of ribbon", length)
 }
@@ -58,11 +53,6 @@ func readPresents(path string) []present {
 	file.Close()
 
 	return result
-}
-
-func inputFilePath() string {
-	flag.Parse()
-	return flag.Arg(0)
 }
 
 func parsePresent(input string) present {

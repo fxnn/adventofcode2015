@@ -1,18 +1,13 @@
-package main
+package day1
 
 import (
-	"flag"
 	"io/ioutil"
 	"log"
 )
 
-func main() {
-	Day1()
-}
-
 // Day1 solves http://adventofcode.com/day/1
-func Day1() {
-	var input = readDirections(inputFilePath())
+func Solve(inputFilePath string) {
+	var input = readDirections(inputFilePath)
 	var floor = 0
 	var firstBasementPosition = 0
 
@@ -41,9 +36,4 @@ func readDirections(path string) (result []byte) {
 		log.Fatal(err)
 	}
 	return
-}
-
-func inputFilePath() string {
-	flag.Parse()
-	return flag.Arg(0)
 }
