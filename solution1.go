@@ -7,7 +7,12 @@ import (
 )
 
 func main() {
-	var input = read(inputFilePath())
+	Day1()
+}
+
+// Day1 solves http://adventofcode.com/day/1
+func Day1() {
+	var input = readDirections(inputFilePath())
 	var floor = 0
 	var firstBasementPosition = 0
 
@@ -30,7 +35,7 @@ func main() {
 	log.Printf("he entered the basement first at position %d", firstBasementPosition)
 }
 
-func read(path string) (result []byte) {
+func readDirections(path string) (result []byte) {
 	var err error
 	if result, err = ioutil.ReadFile(path); err != nil {
 		log.Fatal(err)
