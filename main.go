@@ -7,6 +7,7 @@ import (
 	"github.com/fxnn/adventofcode2015/day1"
 	"github.com/fxnn/adventofcode2015/day2"
 	"github.com/fxnn/adventofcode2015/day3"
+	"github.com/fxnn/adventofcode2015/day4"
 )
 
 func main() {
@@ -25,6 +26,8 @@ func main() {
 		day2.Solve(inputFilePath)
 	case "3":
 		day3.Solve(inputFilePath)
+	case "4":
+		day4.Solve(inputFilePath)
 	default:
 		log.Printf("Day not solved: %s", day)
 	}
